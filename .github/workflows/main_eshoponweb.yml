@@ -56,6 +56,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'JMVG-DR'
+          app-name: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0192AD0FD5D340C7BAD477AFA2474556 }}
           slot-name: 'Production'
           package: .
