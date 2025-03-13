@@ -52,10 +52,26 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4E27EFF632D5429BA065B9F744A58799 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_BA624EA47A4C4B589FF69F70691BF0C8 }}
 
-      - name: Deploy to Azure Web App
-        id: deploy-webapp
+      - name: Deploy to Azure Web App - Canada Central
+        id: deploy-webapp-canadacentral
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'eShopOnWeb'
+          slot-name: 'Production'
+          package: .
+
+      - name: Deploy to Azure Web App - East US
+        id: deploy-webapp-eastus
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'eShopOnWeb-eastus'
+          slot-name: 'Production'
+          package: .
+
+      - name: Deploy to Azure Web App - West Europe
+        id: deploy-webapp-westeurope
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'eShopOnWeb-westeurope'
           slot-name: 'Production'
           package: .
