@@ -52,15 +52,7 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4E27EFF632D5429BA065B9F744A58799 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_BA624EA47A4C4B589FF69F70691BF0C8 }}
 
-      - name: Deploy to Azure Web App (JMVG-DR)
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'JMVG-DR'
-          slot-name: 'Production'
-          package: .
-
-      - name: Deploy to Azure Web App (eShopOnWeb)
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp-eshoponweb
         uses: azure/webapps-deploy@v3
         with:
