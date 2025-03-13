@@ -67,3 +67,11 @@ jobs:
           app-name: 'eShopOnWeb-EastUS'
           slot-name: 'Production'
           package: .
+
+      - name: Deploy to Azure Web App - West Europe
+        id: deploy-to-webapp-westeurope
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'eShopOnWeb-WestEurope'
+          slot-name: 'Production'
+          package: .
